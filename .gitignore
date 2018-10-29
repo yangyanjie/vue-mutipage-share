@@ -1,0 +1,14 @@
+.DS_Store
+.idea
+.vscode/
+node_modules/
+npm-debug.log
+yarn-error.log
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log
+*.log
+备份/
+dist/
+~tpl/
+.project
