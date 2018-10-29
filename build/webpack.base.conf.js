@@ -3,14 +3,16 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 var FaviconWebpackPlugin = require('favicons-webpack-plugin')
+var entries =  utils.getMultiEntry('./src/'+config.moduleName+'/**/*.js'); // 获得入口js文件
+console.log(entries);
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
 module.exports = {
-  entry: {
-    app: ['babel-polyfill','./src/main.js']
-  },
+  // 如果要配置vue多页，那么入口文件就需要有多个，那么在entry 中需要引入多个入口文件；修改start；
+  entry: entries,
+  // 修改end；
   node: {
     fs: 'empty'
   },
